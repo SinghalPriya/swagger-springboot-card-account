@@ -14,7 +14,7 @@ public class CloudantAppConfig extends AbstractCloudConfig{
 	
 	@Bean
 	  public CouchDbConnector couchDbConnector(CouchDbInstance couchDbInstance) {
-	    CouchDbConnector connector = new StdCouchDbConnector("account_db", couchDbInstance);
+	    CouchDbConnector connector = new StdCouchDbConnector("card_db", couchDbInstance);
 	    connector.createDatabaseIfNotExists();
 	    return connector;
 	  }
