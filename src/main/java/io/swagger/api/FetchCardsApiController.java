@@ -24,7 +24,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/fetch-cards")
 public class FetchCardsApiController implements FetchCardsApi {
-    private static Class<FetchCardsApiController> applicationClass = FetchCardsApiController.class;
 
     @Autowired
     private CardRepository repository;
