@@ -18,7 +18,8 @@ public class CardRepository extends CouchDbRepositorySupport<CardDetails>{
 	  }
 	
 	/*@GenerateView
-	public List<CardDetails> findByBand(String band){
-		return queryView("by_band", band);
+	public List<CardDetails> findByCustomerId(String customer_Id)
+	{
+		return queryView("by_customer",customer_Id );
 	}*/
 }

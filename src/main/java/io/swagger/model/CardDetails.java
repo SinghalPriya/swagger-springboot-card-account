@@ -1,22 +1,24 @@
 package io.swagger.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * CardDetails
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-11-01T18:09:28.587+05:30")
+@JsonIgnoreProperties({"id", "revision"})
 public class CardDetails   {
-  @JsonProperty("cardNumber")
+  @JsonProperty("Card_No")
   private Integer cardNumber = null;
 
   @JsonProperty("_id")
-  private Integer customerId = null;
+  private String id = null;
 
+  @JsonProperty("_rev")
+  private String revision;
   public String getRevision() {
     return revision;
   }
@@ -24,23 +26,33 @@ public class CardDetails   {
   public void setRevision(String revision) {
     this.revision = revision;
   }
+  @JsonProperty("Customer_ID")
+  private String customer_Id = null;
 
-  @JsonProperty("_rev")
-  private String revision;
 
-  @JsonProperty("cardType")
+
+
+  public String getCustomer_Id() {
+    return customer_Id;
+  }
+
+  public void setCustomer_Id(String customer_Id) {
+    this.customer_Id = customer_Id;
+  }
+
+  @JsonProperty("Card_Type")
   private String cardType = null;
 
-  @JsonProperty("cardStatus")
+  @JsonProperty("Card_Status")
   private String cardStatus = null;
 
-  @JsonProperty("startDate")
+  @JsonProperty("Card_Start_date")
   private String startDate = null;
 
-  @JsonProperty("expiryDate")
+  @JsonProperty("Card_Exp_End_date")
   private String expiryDate = null;
 
-  @JsonProperty("cardApplyMode")
+  @JsonProperty("Card_Apply_Mode")
   private String cardApplyMode = null;
 
   public CardDetails cardNumber(Integer cardNumber) {
@@ -61,22 +73,22 @@ public class CardDetails   {
     this.cardNumber = cardNumber;
   }
 
-  public CardDetails customerId(Integer customerId) {
-    this.customerId = customerId;
+  public CardDetails id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get customerId
-   * @return customerId
+   * Get id
+   * @return id
   **/
   @ApiModelProperty(value = "")
-  public Integer getCustomerId() {
-    return customerId;
+  public String getId() {
+    return id;
   }
 
-  public void setCustomerId(Integer customerId) {
-    this.customerId = customerId;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public CardDetails cardType(String cardType) {
@@ -180,7 +192,7 @@ public class CardDetails   {
     }
     CardDetails cardDetails = (CardDetails) o;
     return Objects.equals(this.cardNumber, cardDetails.cardNumber) &&
-        Objects.equals(this.customerId, cardDetails.customerId) &&
+        Objects.equals(this.customer_Id, cardDetails.customer_Id) &&
         Objects.equals(this.cardType, cardDetails.cardType) &&
         Objects.equals(this.cardStatus, cardDetails.cardStatus) &&
         Objects.equals(this.startDate, cardDetails.startDate) &&
@@ -190,7 +202,7 @@ public class CardDetails   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardNumber, customerId, cardType, cardStatus, startDate, expiryDate, cardApplyMode);
+    return Objects.hash(cardNumber, customer_Id, cardType, cardStatus, startDate, expiryDate, cardApplyMode);
   }
 
   @Override
@@ -199,7 +211,7 @@ public class CardDetails   {
     sb.append("class CardDetails {\n");
     
     sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    customer_Id: ").append(toIndentedString(customer_Id)).append("\n");
     sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
     sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");

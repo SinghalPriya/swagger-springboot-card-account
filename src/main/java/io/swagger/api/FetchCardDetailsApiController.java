@@ -8,6 +8,7 @@ import io.swagger.model.CardRepository;
 import org.ektorp.DocumentNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,25 +20,21 @@ import java.util.List;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-11-01T18:09:28.587+05:30")
 
-@Controller
+@SpringBootApplication
+@RestController
+@RequestMapping("/fetch-card-details")
 public class FetchCardDetailsApiController implements FetchCardDetailsApi {
 
     private static Class<FetchCardDetailsApiController> applicationClass = FetchCardDetailsApiController.class;
 
-   /* public static void main(String[] args)
-    {
-        SpringApplication.run(FetchCardDetailsApiController.class, args);
-    }*/
-
     @Autowired
     private CardRepository repository;
 
-
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<?> fetchCardsDetailsById(@PathVariable String cardNumber) {
+    public ResponseEntity<?> fetchCardsDetailsById(@PathVariable String id) {
         CardDetails cardDetails = null;
         try {
-            cardDetails = repository.get(cardNumber);
+            cardDetails = repository.get(id);
         } catch (DocumentNotFoundException ex) {
             return new ResponseEntity<ApplicationError>(
                     new ApplicationError(HttpStatus.NOT_FOUND.value(), "specified ID does not exist"),

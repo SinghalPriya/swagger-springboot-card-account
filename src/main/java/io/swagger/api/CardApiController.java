@@ -18,10 +18,10 @@ import java.util.List;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-11-01T18:09:28.587+05:30")
 
+@SpringBootApplication
 @RestController
-@RequestMapping("/card")
+@RequestMapping("/cards")
 public class CardApiController implements CardApi {
-
 
     @Autowired
     private CardRepository repository;
@@ -40,6 +40,7 @@ public class CardApiController implements CardApi {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<?> getAllCards() {
+
         List<CardDetails> allCards = repository.getAll();
         if (allCards == null || allCards.isEmpty())
             return new ResponseEntity<ApplicationError>(
