@@ -26,7 +26,7 @@ public interface CardApi {
     @ApiOperation(value = "Gets card details", notes = "Returns a list containing all card details", response = Cards.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "A list of Cards", response = Cards.class) })
-    @RequestMapping(value = "/cards",
+    @RequestMapping(value = "/card",
         method = RequestMethod.GET)
     ResponseEntity<?> getAllCards();
 

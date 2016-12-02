@@ -26,6 +26,6 @@ public interface FetchCardsApi {
         @ApiResponse(code = 404, message = "Card does not exist.", response = Cards.class) })
     @RequestMapping(value = "/fetch-cards/{Customer_ID}",
         method = RequestMethod.GET)
-    ResponseEntity<?> fetchCardsForCustomer( String customer_Id);
+    ResponseEntity<?> fetchCardsForCustomer( Integer custId);
 
 }

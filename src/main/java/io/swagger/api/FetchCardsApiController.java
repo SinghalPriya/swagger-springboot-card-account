@@ -28,8 +28,8 @@ public class FetchCardsApiController implements FetchCardsApi {
     @Autowired
     private CardRepository repository;
 
-    @RequestMapping(value = "{Customer_ID}", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<?> fetchCardsForCustomer(@PathVariable String customer_Id) {
+    @RequestMapping(value = "{custId}", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<?> fetchCardsForCustomer(@PathVariable Integer custId) {
         List<CardDetails> cardDetails = null;
        /* try {
             cardDetails = repository.findByCustomerId(customer_Id);

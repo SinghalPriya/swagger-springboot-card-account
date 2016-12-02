@@ -1,6 +1,7 @@
 package io.swagger.model;
 
 import java.util.Objects;
+
 import io.swagger.annotations.ApiModelProperty;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -11,14 +12,10 @@ import org.codehaus.jackson.annotate.JsonProperty;
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-11-01T18:09:28.587+05:30")
 @JsonIgnoreProperties({"id", "revision"})
 public class CardDetails   {
-  @JsonProperty("Card_No")
-  private Integer cardNumber = null;
 
-  @JsonProperty("_id")
+  @org.codehaus.jackson.annotate.JsonProperty("_id")
   private String id = null;
 
-  @JsonProperty("_rev")
-  private String revision;
   public String getRevision() {
     return revision;
   }
@@ -26,33 +23,42 @@ public class CardDetails   {
   public void setRevision(String revision) {
     this.revision = revision;
   }
-  @JsonProperty("Customer_ID")
-  private String customer_Id = null;
 
+  @org.codehaus.jackson.annotate.JsonProperty("_rev")
+  private String revision;
 
+  @JsonProperty("cardNumber")
+  private Integer cardNumber = null;
 
-
-  public String getCustomer_Id() {
-    return customer_Id;
-  }
-
-  public void setCustomer_Id(String customer_Id) {
-    this.customer_Id = customer_Id;
-  }
-
-  @JsonProperty("Card_Type")
+  @JsonProperty("cardType")
   private String cardType = null;
 
-  @JsonProperty("Card_Status")
+  public Integer getCustId() {
+    return custId;
+  }
+
+  public void setCustId(Integer custId) {
+    this.custId = custId;
+  }
+
+  @JsonProperty("custId")
+  private Integer custId = null;
+
+  public CardDetails custId(Integer custId) {
+    this.custId = custId;
+    return this;
+  }
+
+  @JsonProperty("cardStatus")
   private String cardStatus = null;
 
-  @JsonProperty("Card_Start_date")
+  @JsonProperty("startDate")
   private String startDate = null;
 
-  @JsonProperty("Card_Exp_End_date")
+  @JsonProperty("expiryDate")
   private String expiryDate = null;
 
-  @JsonProperty("Card_Apply_Mode")
+  @JsonProperty("cardApplyMode")
   private String cardApplyMode = null;
 
   public CardDetails cardNumber(Integer cardNumber) {
@@ -60,10 +66,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get cardNumber
    * @return cardNumber
-  **/
+   **/
   @ApiModelProperty(value = "")
   public Integer getCardNumber() {
     return cardNumber;
@@ -73,21 +79,21 @@ public class CardDetails   {
     this.cardNumber = cardNumber;
   }
 
-  public CardDetails id(String id) {
+  /*public CardDetails id(String id) {
     this.id = id;
     return this;
-  }
+  }*/
 
-   /**
-   * Get id
-   * @return id
-  **/
+  /**
+   * Get customerId
+   * @return customerId
+   **/
   @ApiModelProperty(value = "")
-  public String getId() {
+  public String getid() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setid(String id) {
     this.id = id;
   }
 
@@ -96,10 +102,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get cardType
    * @return cardType
-  **/
+   **/
   @ApiModelProperty(value = "")
   public String getCardType() {
     return cardType;
@@ -114,10 +120,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get cardStatus
    * @return cardStatus
-  **/
+   **/
   @ApiModelProperty(value = "")
   public String getCardStatus() {
     return cardStatus;
@@ -132,10 +138,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get startDate
    * @return startDate
-  **/
+   **/
   @ApiModelProperty(value = "")
   public String getStartDate() {
     return startDate;
@@ -150,10 +156,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get expiryDate
    * @return expiryDate
-  **/
+   **/
   @ApiModelProperty(value = "")
   public String getExpiryDate() {
     return expiryDate;
@@ -168,10 +174,10 @@ public class CardDetails   {
     return this;
   }
 
-   /**
+  /**
    * Get cardApplyMode
    * @return cardApplyMode
-  **/
+   **/
   @ApiModelProperty(value = "")
   public String getCardApplyMode() {
     return cardApplyMode;
@@ -192,26 +198,26 @@ public class CardDetails   {
     }
     CardDetails cardDetails = (CardDetails) o;
     return Objects.equals(this.cardNumber, cardDetails.cardNumber) &&
-        Objects.equals(this.customer_Id, cardDetails.customer_Id) &&
-        Objects.equals(this.cardType, cardDetails.cardType) &&
-        Objects.equals(this.cardStatus, cardDetails.cardStatus) &&
-        Objects.equals(this.startDate, cardDetails.startDate) &&
-        Objects.equals(this.expiryDate, cardDetails.expiryDate) &&
-        Objects.equals(this.cardApplyMode, cardDetails.cardApplyMode);
+            Objects.equals(this.custId, cardDetails.custId) &&
+            Objects.equals(this.cardType, cardDetails.cardType) &&
+            Objects.equals(this.cardStatus, cardDetails.cardStatus) &&
+            Objects.equals(this.startDate, cardDetails.startDate) &&
+            Objects.equals(this.expiryDate, cardDetails.expiryDate) &&
+            Objects.equals(this.cardApplyMode, cardDetails.cardApplyMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardNumber, customer_Id, cardType, cardStatus, startDate, expiryDate, cardApplyMode);
+    return Objects.hash(cardNumber, custId, cardType, cardStatus, startDate, expiryDate, cardApplyMode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardDetails {\n");
-    
+
     sb.append("    cardNumber: ").append(toIndentedString(cardNumber)).append("\n");
-    sb.append("    customer_Id: ").append(toIndentedString(customer_Id)).append("\n");
+    sb.append("    custId: ").append(toIndentedString(custId)).append("\n");
     sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
     sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
@@ -232,4 +238,3 @@ public class CardDetails   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
